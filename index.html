@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRC Steel Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+          box-sizing: border-box;
+          font-family: 'K2D', sans-serif;
+      }
+
+      /* พื้นหลังหลัก */
+      .gradient-bg {
+          background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #93c5fd 100%);
+      }
+
+    /* ==== Glow Effect ==== */
+    .glow-effect:hover {
+      box-shadow: 0 0 20px rgba(0, 174, 255, 0.8),
+                  0 0 40px rgba(0, 152, 223, 0.8),
+                  0 0 60px rgba(0, 110, 161, 0.8) !important;
+    }
+    .glow-red:hover {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.8),
+                  0 0 40px rgba(239, 68, 68, 0.6),
+                  0 0 60px rgba(239, 68, 68, 0.4) !important;
+    }
+    .glow-green:hover {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.8),
+                  0 0 40px rgba(34, 197, 94, 0.6),
+                  0 0 60px rgba(34, 197, 94, 0.4) !important;
+    }
+    .glow-purple:hover {
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.8),
+                  0 0 40px rgba(168, 85, 247, 0.6),
+                  0 0 60px rgba(168, 85, 247, 0.4) !important;
+    }
+
+      /* Hover scale */
+      .branch-btn {
+          transition: all 0.3s ease-in-out;
+      }
+      .branch-btn:hover {
+          transform: scale(1.1);
+      }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Header -->
+    <header class="bg-white/10 backdrop-blur-sm border-b border-white/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-center space-x-4">
+        <!-- Logo -->
+        <div class="w-12 h-12 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+          <img src="logo-crc.png" alt="CRC Logo" class="w-full h-full object-contain">
+        </div>
+                <!-- Title -->
+                <h1 class="text-2xl font-semibold text-white">CRC Steel Links</h1>
+            </div>
+            <!-- Gradient Line -->
+            <div class="mt-4 h-0.5 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container mx-auto px-6 py-16">
+      <div class="max-w-6xl mx-auto text-center">
+        <!-- Welcome Text -->
+        <div class="mb-12">
+          <h2 class="text-4xl md:text-5xl font-semibold text-white mb-4">
+            เลือกสาขาของคุณ
+          </h2>
+          <p class="text-xl text-white/80 font-light">
+            เข้าถึงระบบและข้อมูลของแต่ละสาขาได้อย่างสะดวก
+          </p>
+        </div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+  <!-- Surin Branch (แดง) -->
+  <button onclick="navigateToSurin()" 
+    class="branch-btn group bg-gradient-to-br from-red-500 to-orange-600 
+          hover:from-red-600 hover:to-orange-700 text-white p-8 
+          rounded-2xl shadow-xl glow-red">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition">
+        <i class="fas fa-building text-2xl"></i>
+      </div>
+      <h3 class="text-2xl font-semibold">สาขา สุรินทร์</h3>
+      <p class="text-red-100 font-light">สำนักงานใหญ่</p>
+    </div>
+  </button>
+
+  <!-- Nangrong Branch (ฟ้า) -->
+  <button onclick="navigateToNangrong()" 
+    class="branch-btn group bg-gradient-to-br from-blue-500 to-blue-700 
+          hover:from-blue-600 hover:to-blue-800 text-white p-8 
+          rounded-2xl shadow-xl glow-effect">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition">
+        <i class="fas fa-warehouse text-2xl"></i>
+      </div>
+      <h3 class="text-2xl font-semibold">สาขา นางรอง</h3>
+      <p class="text-blue-100 font-light">คลังสินค้า 0002</p>
+    </div>
+  </button>
+
+  <!-- Detudom Branch (เขียว) -->
+  <button onclick="navigateToDetudom()" 
+    class="branch-btn group bg-gradient-to-br from-green-500 to-green-700 
+          hover:from-green-600 hover:to-green-800 text-white p-8 
+          rounded-2xl shadow-xl glow-green">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition">
+        <i class="fas fa-cogs text-2xl"></i>
+      </div>
+      <h3 class="text-2xl font-semibold">สาขา เดชอุดม</h3>
+      <p class="text-green-100 font-light">คลังสินค้า 0003</p>
+    </div>
+  </button>
+
+  <!-- Admin Branch (ม่วง) -->
+  <button onclick="navigateToAdmin()" 
+    class="branch-btn group bg-gradient-to-br from-purple-500 to-purple-700 
+          hover:from-purple-600 hover:to-purple-800 text-white p-8 
+          rounded-2xl shadow-xl glow-purple">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition">
+        <i class="fas fa-user-shield text-2xl"></i>
+      </div>
+      <h3 class="text-2xl font-semibold">Admin</h3>
+      <p class="text-purple-100 font-light">กลุ่มงานธุรการ</p>
+    </div>
+  </button>
+</div>
+
+
+
+        <!-- Additional Info -->
+        <div class="mt-16 text-center">
+          <p class="text-white/60 font-light">
+            <i class="fas fa-shield-alt mr-2"></i>
+            ระบบปลอดภัย | เข้าถึงได้ทุกที่ทุกเวลา
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Branch Pages (Hidden by default) -->
+    <div id="surin-page" class="hidden min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+        <!-- Surin Branch Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <img src="logo-crc.png" alt="CRC Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-semibold text-gray-800">CRC Steel Links</h1>
+                            <p class="text-sm text-blue-600 font-medium">Surin Branch</p>
+                        </div>
+                    </div>
+                    <button onclick="goHome()" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-home text-xl"></i>
+                    </button>
+                </div>
+                <div class="mt-3 h-0.5 bg-gradient-to-r from-blue-500 via-blue-300 to-transparent"></div>
+            </div>
+        </header>
+
+        <!-- Surin Branch Content -->
+        <main class="container mx-auto px-6 py-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-2">สาขา สุรินทร์</h2>
+                <p class="text-gray-600 font-light">เข้าถึงระบบและเครื่องมือต่าง ๆ ของสำนักงานใหญ่</p>
+            </div>
+
+            <!-- Links Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- ERP System -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-street-view text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานการติดตามหนี้คงค้าง</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลลูกหนี้ค้างชำระ</p>
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/spreadsheets/d/1bKumickxbJ83jyDVhQrbXR2Va9EAW3TgW769kBvhxZk/edit?gid=1327892619#gid=1327892619', '_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                        <i class="fas fa-external-link-alt mr-2"></i>เข้า Link
+                    </button>
+                </div>
+
+                <!-- HR System -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-ticket text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2"> Big Ticket</h3>
+                        <p class="text-gray-600 text-sm font-light">รายการสินค้าขายดี/วัน</p>
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/spreadsheets/d/128Gw08RJwXaJh9A5Dd9TRyE4lqfRTomxaue3cBSm-9Q/edit?gid=1589050057#gid=1589050057','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                        <i class="fas fa-external-link-alt mr-2"></i>เข้า Link
+                    </button>
+                </div>
+
+
+
+                <!-- Inventory -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-truck-fast text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานจัดส่งสินค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานจัดส่งสินค้าประจำวัน</p>
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/spreadsheets/d/1UW_Hp78aownApgBGq9li3VVQRola_XfW/edit?gid=678158568#gid=678158568','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                        <i class="fas fa-external-link-alt mr-2"></i>เข้า Link
+                    </button>
+                </div>
+
+                <!-- Customer Portal -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-file-export text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แจ้งสลิปโอนเงิน</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มแจ้งสลิปโอนเงิน</p>
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/forms/d/1ax-7UqGFkKaszINU3VxXuRW5nQn0wamazMoXVmgidQU/viewform?edit_requested=true','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                        <i class="fas fa-external-link-alt mr-2"></i>เข้า Link
+                    </button>
+                </div>
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fas fa-clipboard-check text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ตารางกะทำงาน</h3>
+                        <p class="text-gray-600 text-sm font-light">ตารางกะทำงานประจำเดือนปัจจุบัน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/10fYoUyNVWoYpDC8SYkY5d3N8LoYiPYO5NfJWMoRPxWo/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fas fa-clipboard-check text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ตารางกะทำงาน</h3>
+                        <p class="text-gray-600 text-sm font-light">ตารางกะทำงานประจำเดือนตุลาคม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1avbYUEPkcdjvmrPLXctfN1QD2Yp4Hx57/edit?usp=sharing&ouid=118418367410379159864&rtpof=true&sd=true','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-calculator text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ลดหนี้เก็บไว้หัก/ยอดโอนเกิน</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานลดหนี้เก็บไว้หักและยอดโอนเกิน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/10gBtMT9Q7f2F_bmUwQzvsB5a1LPFJl6feQvpnVThl80/edit?gid=1462244141#gid=1462244141','_blank')" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-coins text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เบิกค่าใช้จ่ายออกตลาด</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มเบิกค่าใช้จ่ายออกตลาด TT </p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1MJw9-ajDjvit1Uf8Vx-W0HeO4sh611qqjcnjtgQKxSI/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-coins text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เสนอราคา 2</h3>
+                        <p class="text-gray-600 text-sm font-light">เสนอราคา 2 TT </p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1CGXDO7mh1bocDAvilw07ioc154mlN0Wx/edit?usp=sharing&ouid=118418367410379159864&rtpof=true&sd=true','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-lightbulb text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">KPI&แผนงาน</h3>
+                        <p class="text-gray-600 text-sm font-light">KPI&แผนงาน TT </p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1xqGyFhBCOgFa1XeXowTDPQG4lHRTMQD7w8jq-qglOjw/edit?gid=1708706887#gid=1708706887','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-people-arrows text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า by Product</h3>
+                        <p class="text-gray-600 text-sm font-light">เครื่องมือสนับสนุนการติดตามลูกค้า TT</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1iRtV0xfJApGTjkRi06a1YBREJAn8nFko-WLJB3Bs5YA/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-people-arrows text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ข้อมูลลูกค้าใหม่</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลลูกค้าใหม่ "New Customer TT</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1NXM2kev3m5fhh-RIvD_EzwHDoOcmYGGbPv1FsdkJveI/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Surin-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-tty text-violet-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า TT</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลติดตามลูกค้า TT</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1FDH9Q3IMa75eiPvYjAiQqXYnJXOXC6F-c47UKZT7lis/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Surin-Ind&Pro</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                             <i class="fa-solid fa-tty text-violet-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า Ind&Pro</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลติดตามลูกค้า Industry&Project</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1gOTMaMTrigvsd74fzwIhODK6oXSHZRWYwi81d5W7SDc/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Surin-Ind&Pro</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                             <i class="fa-solid fa-tty text-violet-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ข้อมูลลูกค้าใหม่</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลลูกค้าใหม่ "New Customer"Industry&Project</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1THP5u9Ha0T_9qYrYCo-2WryaqNd0qDvZgDsghhp1zXo/edit?usp=sharingg','_blank')" class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Surin-Ind&Pro</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-handshake text-pink-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ส่งเสริมการขาย Ind&Pro</h3>
+                        <p class="text-gray-600 text-sm font-light">ส่งเสริมการขาย Industry&Project</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1lZz7uXnB4wxsi17hzz8iy3bz6539Dt1s/edit?gid=1502423607#gid=1502423607','_blank')" class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Surin-SH/Online</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                             <i class="fa-solid fa-tty text-violet-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า SH/Online</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลติดตามลูกค้า Showroom&Online</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1AhkRlsspiGihND6FzCWqS3QRk2FW6l2UqD0VbMtpJNc/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Surin-SH/Online</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า Walkin</h3>
+                        <p class="text-gray-600 text-sm font-light">บันทึกติดตามลูกค้า Walkin-Showroom</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/1lWW3kcpObneV2Gy3CJwFuH9M3Yf_tMDiy6KeT-e8qjU/edit','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Similar structure for Nangrong and Detudom pages would go here -->
+    <div id="nangrong-page" class="hidden min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+        <!-- Nangrong Branch Content (similar structure) -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <img src="logo-crc.png" alt="CRC Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-semibold text-gray-800">CRC Steel Links</h1>
+                            <p class="text-sm text-blue-600 font-medium">Nangrong Branch</p>
+                        </div>
+                    </div>
+                    <button onclick="goHome()" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-home text-xl"></i>
+                    </button>
+                </div>
+                <div class="mt-3 h-0.5 bg-gradient-to-r from-blue-500 via-blue-300 to-transparent"></div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 py-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-2">สาขา นางรอง</h2>
+                <p class="text-gray-600 font-light">เข้าถึงระบบและเครื่องมือต่าง ๆ ของสาขา นางรอง</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-brown-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-money-bill-wave text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานติดตามหนี้คงค้าง</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลลูกหนี้ค้างชำระ</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1LA9fMydApKshnrPqmfQOOrbq7X2BJW04jN71h9ofK7c/edit?gid=53627752#gid=53627752','_blank')" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-truck text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานจัดส่งสินค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานจัดส่งสินค้าประจำวัน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/13dpGWi1L-mR8oTp-zeK2dSn5C2PnEPDo/edit?rtpof=true','_blank')" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-comments-dollar text-gold-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">โอนย้ายสินค้าสาขาสุรินทร์</h3>
+                        <p class="text-gray-600 text-sm font-light">บันทึกการโอนย้ายสินค้านางรอง-สุรินทร์</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/10GpHNmsRDvECRPuP1WneF5xza8cAbvhgsAbwC3OzF5E/edit?gid=0#gid=0','_blank')" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-money-bill-transfer text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แจ้งสลิปโอนเงิน</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มแจ้งสลิปโอนเงิน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSciU6wvUNP-dH1CWZcldTnE6Fec_sOQzRcezykZK4EugjN4WQ/viewform','_blank')" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>  
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-clipboard-list text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ข้อมูลการติดตามลูกค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลการติดตามลูกค้าสาขานางรอง</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1poY1QTfFbhAIx88jYNtNabwYx_Uad5Eg1hisaaRZ1oQ/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i> เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Nangrong-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-people-arrows text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า by Product</h3>
+                        <p class="text-gray-600 text-sm font-light">เครื่องมือสนับสนุนการติดตามลูกค้า TT</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1iRtV0xfJApGTjkRi06a1YBREJAn8nFko-WLJB3Bs5YA/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-red-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Nangrong-Showroom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-gears text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แบบสอบถามออกตลาด</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มสอบถามการออกตลาด</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/19ZOsTHA9ePYv2mUz2jwORIei-aXBr13RqMbPSHyr6Y0/viewform?edit_requested=true','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i> เข้า Link 
+                         </button>
+                 </div> 
+
+            </div>
+        </main>
+    </div>
+
+    <div id="detudom-page" class="hidden min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+        <!-- Detudom Branch Content -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <img src="logo-crc.png" alt="CRC Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-semibold text-gray-800">CRC Steel Links</h1>
+                            <p class="text-sm text-blue-600 font-medium">Detudom Branch</p>
+                        </div>
+                    </div>
+                    <button onclick="goHome()" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-home text-xl"></i>
+                    </button>
+                </div>
+                <div class="mt-3 h-0.5 bg-gradient-to-r from-blue-500 via-blue-300 to-transparent"></div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 py-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-2">สาขา เดชอุดม</h2>
+                <p class="text-gray-600 font-light">เข้าถึงระบบและเครื่องมือต่าง ๆ ของสาขา เดชอุดม</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Detudom </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-money-check text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานจัดส่งสินค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานจัดส่งสินค้าประจำวัน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1QpZsfcFXLyLnMJz7HzW2b4KO0AQy14O0/edit?gid=678158568#gid=678158568','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Detudom </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-user-plus text-gray:-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามหนี้คงค้าง </h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานการติดตามหนี้คงค้าง</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1hIWiU9ivJ5KA2jshmL1WIo413GjCmIaRk-9gnPairvI/edit?gid=1327892619#gid=1327892619','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-upload text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แจ้งสลิปโอนเงิน</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มแจ้งสลิปโอนเงิน</p>
+                    </div>
+                        <button onclick="window.open(' https://docs.google.com/forms/d/e/1FAIpQLSfi-OqJTrRyQkbOk8591gjZbNZtPWYCUVYFa5SpO8B9SqbiVw/viewform','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-people-arrows text-pink-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้าเก่า/ใหม่</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลติดตามลูกค้าเก่าและลูกค้าใหม่</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1BAK3WX820kRklGbkcsSVTgyXvIlVsPqTRJh45ZFW9_8/edit?gid=1361431887#gid=1361431887','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-brands fa-product-hunt text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แบบฟอร์มเบิกสินค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มเบิกสินต้าจากสาขาสุรินทร์</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1xQhXBS5eLx76Q5Cib5vcPsNAlwsXSBsL3YxogRGjQMU/edit?gid=1620420167#gid=1620420167','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ข้อมูลติดตามลูกค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลติตดามลูกค้าสาขาเดชอุดม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1G3KX7N3tNv3586yuQD5KjWniWYQqAsEm4aYyDghgWKM/edit?gid=2038741771#gid=2038741771','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Detudom-TT</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-people-arrows text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า by Product</h3>
+                        <p class="text-gray-600 text-sm font-light">เครื่องมือสนับสนุนการติดตามลูกค้า TT</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1iRtV0xfJApGTjkRi06a1YBREJAn8nFko-WLJB3Bs5YA/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-database text-gray-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แก้ไขข้อมูล Similan-Express</h3>
+                        <p class="text-gray-600 text-sm font-light">แก้ไขข้อมูลลูกค้าSimilan-Express</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1S7A9vuc-mwyCsUqp0PLHBFGyWui1fReB/edit?gid=352482639#gid=352482639','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-down-left-and-up-right-to-center text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">โอนเกินเก็บไว้หัก</h3>
+                        <p class="text-gray-600 text-sm font-light">ลูกค้าโอนเกินเก็บไว้หัก สาขาเดชอุดม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1DxBdMpKrzwvR88py6MidZj-XlwYKS6WzGSLn_y-jh2g/edit?gid=0#gid=0','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-folder-open text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เอกสารวงเงินเครดิต/สินเชื่อ</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลรับ-ส่งเอกสารวงเงินเครดิต/สินเชื่อ</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1ZTIh1SNT42_2ljCa4pQiBC-rA_RfB8bEvpvjg_d73Os/edit?gid=0#gid=0','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium"> Detudom</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-right text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ติดตามลูกค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">ติดตามลูกค้า สาขาเดชอุดม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1G3KX7N3tNv3586yuQD5KjWniWYQqAsEm4aYyDghgWKM/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+            </div>
+        </main>
+    </div>
+    
+  <div id="admin-page" class="hidden min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+      <!-- Admin Branch Header -->
+      <header class="bg-white shadow-sm border-b">
+          <div class="container mx-auto px-6 py-4">
+              <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-4">
+                      <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                          <img src="logo-crc.png" alt="CRC Logo" class="w-full h-full object-contain">
+                      </div>
+                      <div>
+                          <h1 class="text-xl font-semibold text-gray-800">CRC Steel Links</h1>
+                          <p class="text-sm text-blue-600 font-medium">Admin Branch</p>
+                      </div>
+                  </div>
+                  <button onclick="goHome()" class="text-gray-600 hover:text-blue-600 transition-colors">
+                      <i class="fas fa-home text-xl"></i>
+                  </button>
+              </div>
+              <div class="mt-3 h-0.5 bg-gradient-to-r from-blue-500 via-blue-300 to-transparent"></div>
+          </div>
+      </header>
+
+      <!-- Admin Branch Content -->
+      <main class="container mx-auto px-6 py-8">
+          <div class="mb-8">
+              <h2 class="text-3xl font-semibold text-gray-800 mb-2">Admin</h2>
+              <p class="text-gray-600 font-light">เข้าถึงเครื่องมือและระบบสนับสนุนงานธุรการ</p>
+          </div>
+
+          <!-- Links Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">หัวหน้าทีมขาย</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-military-to-person text-indigo-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">สถานการณ์ประชุมราคา </h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มแจ้งสถานการณ์ขายรายสัปดาห์</p>
+                    </div>
+                        <button
+onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdE5SAh8E9FSEvob1wia7x_wS4REWMZ7fBnWrWdJ1B3kKpwMQ/viewform','_blank')" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Analytics -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-car-side text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แผนออกตลาด</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานแผนออกตลาด</p>
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/spreadsheets/d/1tY-7e9L_ehuYecMdR2IHuPjcXoyYhIGX-lh3Pmzodbw/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                        <i class="fas fa-external-link-alt mr-2"></i>เข้า Link
+                    </button>
+                </div>
+
+               <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เปลี่ยนสินค้า ไม่ลดหนี้</h3>
+                        <p class="text-gray-600 text-sm font-light">บันทึกข้อมูลเปลี่ยนคืนสินค้า กรณีไม่ลดหนี้</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfvHfhV3YTPY9mT6tomvZaQV1zxfg9HIa1F5jCyA6z-NAnr4w/viewform','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แจ้งซ่อม ฝ่ายซ่อมบำรุง</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มแจ้งซ่อมฝ่ายซ่อมบำรุง</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeOETCoEIAR554UOqFXOxCmdPijC_8H7G13Rw17aQkp1zI49w/viewform','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เบิกสวัสดิการ </h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มเบิกสวัสดิการพนักงาน</p>
+                    </div>
+                        <button
+onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeCCS7yW5pj3O8aomUxDeVS2t06lxHIMnquAJ_0loVF9Srm9Q/viewform','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Purchase Backorder</h3>
+                        <p class="text-gray-600 text-sm font-light">แผนคาดการณ์สินค้าค้างรับ</p>
+                    </div>
+                        <button
+onclick="window.open('https://script.google.com/macros/s/AKfycbw7xAQfIF1OykozdGybX3qp1VTX7-l3vXPIqeU6bkQDzAuztW3fYITCzU9G6ZDK2pCYTQ/exec','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เอกสารใบ มอก.</h3>
+                        <p class="text-gray-600 text-sm font-light">เอกสารหนังสือรับรอง มอก.</p>
+                    </div>
+                        <button onclick="window.open('https://drive.google.com/drive/folders/1PlYjPrUeCmyUxTA3ks00PqYGRCl4t1HQ','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                            
+                         </button>
+                 </div>    
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">All Team Sales</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">MIT 2024-2026</h3>
+                        <p class="text-gray-600 text-sm font-light">เอกสารใบ MIT 2024-2026</p>
+                    </div>
+                        <button onclick="window.open('https://drive.google.com/drive/folders/1QnZtvVUgsQtedayqJSEfKVKTHZeNIg30','_blank')" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>                                
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">All Admin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">New Product & Out Off Stock</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานสินค้าใหม่ และสินค้าไม่มี Stock</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1p4cYxn_CFgqvSnRaLAemK-5INYXMrUmjceh_7pPSa9I/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">All Admin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">สถาณการณ์ประชุมราคา</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มตอบสถาณการณ์ประชุมราคา</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1UGZ7mCQ6cSxbo8iYNLukOp02g_fkoFyptUagcN14Rwo/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">All Admin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">เบิกอุปกรณ์สำนักงาน</h3>
+                        <p class="text-gray-600 text-sm font-light">เบิกอุปกรณ์สำนักงาน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScq2PxWcds7jXCeH9tiNaq7O5eX_seGfSufLxQsGHxgCrryZw/closedform','_blank')" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">ALL Admin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">บันทึกแผนออกตลาด</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มบันทึกแผนออกตลาด ฝ่ายขาย </p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd98vOjrL1xCIuMIDinLj30AbeSdlOy2pFl8n6FjMvWLGCKfA/viewform','_blank')" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">ALL Admin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ข้อมูลใบมัดจำ</h3>
+                        <p class="text-gray-600 text-sm font-light">ข้อมูลการใช้เลขที่ใบมัดจำ</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1W-6wgZ74W1-RgCGn9vSA-Ic-JjgIN6BRXHblQBoFKJY/edit?gid=0#gid=0','_blank')" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">แก้ไขข้อมูล Surin</h3>
+                        <p class="text-gray-600 text-sm font-light">แก้ไขข้อมูลลูกค้าSimilan-Express</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1PBozinHYUwoZI3ln7v-GJ3aYU7Nv7qPu/edit?usp=sharing&ouid=118418367410379159864&rtpof=true&sd=true','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">ตรวจสอบแนบสลิป</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มตรวจสอบการแนบสลิป</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1z_mSXmJc-n5VT_kjPn-7kRB6aF1UtkAn0uvRk7vodQI/edit?gid=602545016#gid=602545016','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>
+                 <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">สรุปยอดขายรายวัน</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานยอดขายรายวันสาขาสุรินทร์</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1asqL8kinGg2oanC-Y5q1CIE361N5X7HFtgD1d99Vsew/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div>                             
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">จองห้องประชุม</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มจองห้องประชุม </p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSftLXdPqgUh8Vb3VeEYINTfcQQQzLEF8s-vmcFoeBkOqJCTLg/viewform','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รวมโปรโมชั่น </h3>
+                        <p class="text-gray-600 text-sm font-light">สรุปโปรโมชั่น ทั้ง 3 สาขา</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1W5e49iRRQAeRjSfcqBVo019jAnD2BURJ/edit?usp=sharing&ouid=118418367410379159864&rtpof=true&sd=true','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+           
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">รายงานยอดเงินสนับสนุนลูกค้า</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานยอดเงินช่วยเหลือ/สนับสนุนลูกค้า</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1Cm3j7cqag2X4OJC6iX8nUkbItOpeyrPVS8dL2_E6unc/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">จองยานพาหนะ</h3>
+                        <p class="text-gray-600 text-sm font-light">แบบฟอร์มจองยานพาหนะ สาขาสุรินทร์</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4ecqmU8WjdPuIh5YdbIcljYXDX75J0yZ0gSLepGK3WignLA/viewform','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Surin</span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">คำขอยืมเงินทดรองจ่าย</h3>
+                        <p class="text-gray-600 text-sm font-light">คำขอยืมเงินทดรองจ่าย ฝ่ายบัญชีพิเศษ</p>
+                    </div>
+                        <button onclick="window.open('https://script.google.com/macros/s/AKfycbz2PCACMiyg55pa3gvevfa3JgT59quybfIigaXvsYSM0DZuKHKo0UhTsNtWUUubSgov/exec','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Nangrong </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">สรุปยอดขายรายวัน</h3>
+                        <p class="text-gray-600 text-sm font-light">สรุปยอดขายรายวันสาขานางรอง</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1rA_LGGXo-A28UzIiqtUwvbtu5LGgeJqy7mOyNE0zbrs/edit?usp=sharing','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Nangrong </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Big Ticket</h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานสินค้าขายดี/วัน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/19l6-QtkTLi621UMOz9VzRUcRWcKjTvBRK5gI0nPsGXc/edit?gid=583967657#gid=583967657','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Detudom </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">สรุปยอดขายรายวัน</h3>
+                        <p class="text-gray-600 text-sm font-light">สรุปยอดขายรายวันสาขาเดชอุดม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1YWGT-FzjuXrROnttzp1Jtd3Pks-_6oYk0a-85vKCScY/edit?usp=sharing')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Detudom </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Big Ticket </h3>
+                        <p class="text-gray-600 text-sm font-light">รายงานสินค้าขายดี/วัน</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1PSUkE82elePlMRYBLrWIKQXGSByklSlWvQHmv6FY-Dg/edit?usp=sharing')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+                <!-- Quality Control -->
+                <div class="card-hover bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-100 text-yellow--800 text-xs px-2 py-1 rounded-full font-medium">Admin Detudom </span>
+                    </div>
+                    <div class="mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-person-walking-arrow-loop-left text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Stockของสมนาคุณ</h3>
+                        <p class="text-gray-600 text-sm font-light">Stockของสมนาคุณลูกค้าสาขาเดชอุดม</p>
+                    </div>
+                        <button onclick="window.open('https://docs.google.com/spreadsheets/d/1ejbXrascMOLT-FhshMrLCWNMIqCKr5L1-3l2KCybysA/edit?gid=206602007#gid=206602007','_blank')" class="w-full bg-gradient-to-r from-yellow-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 px-4 rounded-xl font-medium transition-all duration-300 glow-effect">
+                            <i class="fas fa-external-link-alt mr-2"></i>เข้า Link 
+                         </button>
+                 </div> 
+
+
+                  </button>
+              </div>
+          </div>
+      </main>
+  </div>
+
+    
+    <script>
+        // Navigation functions
+        function navigateToSurin() {
+            document.querySelector('body > header').style.display = 'none';
+            document.querySelector('body > main').style.display = 'none';
+            document.getElementById('surin-page').classList.remove('hidden');
+        }
+
+        function navigateToNangrong() {
+            document.querySelector('body > header').style.display = 'none';
+            document.querySelector('body > main').style.display = 'none';
+            document.getElementById('nangrong-page').classList.remove('hidden');
+        }
+
+        function navigateToDetudom() {
+            document.querySelector('body > header').style.display = 'none';
+            document.querySelector('body > main').style.display = 'none';
+            document.getElementById('detudom-page').classList.remove('hidden');
+                }
+        function navigateToAdmin() {
+            document.querySelector('body > header').style.display = 'none';
+            document.querySelector('body > main').style.display = 'none';
+            document.getElementById('admin-page').classList.remove('hidden');
+        }
+
+        // อัปเดต goHome() ให้ซ่อน admin-page ด้วย
+        function goHome() {
+            document.getElementById('surin-page').classList.add('hidden');
+            document.getElementById('nangrong-page').classList.add('hidden');
+            document.getElementById('detudom-page').classList.add('hidden');
+            document.getElementById('admin-page').classList.add('hidden');
+
+            document.querySelector('body > header').style.display = 'block';
+            document.querySelector('body > main').style.display = 'block';
+        }
+
+    </script>
+</body>
+</html>
